@@ -3,10 +3,16 @@ import styles from "./Form.module.css";
 
 export default function Form() {
 	const [name, setName] = useState("");
+	const [task, setTask] = useState("");
+	const [comment, setComment] = useState("");
 
 	useEffect(() => {
-		console.log("name:", name);
-	}, [name]);
+		console.log("task:", task);
+	}, [task]);
+
+	useEffect(() => {
+		console.log("comment:", comment);
+	}, [comment]);
 
 	return (
 		<form className={styles.form}>
@@ -29,7 +35,12 @@ export default function Form() {
 					Task:{" "}
 				</label>
 				<div className={styles.formField}>
-					<input type="text" id="task" />
+					<input
+						type="text"
+						id="task"
+						value={task}
+						onChange={(e) => setTask(e.target.value)}
+					/>
 				</div>
 			</div>
 
@@ -38,7 +49,14 @@ export default function Form() {
 					Comment:{" "}
 				</label>
 				<div className={styles.formField}>
-					<textarea name="comment" id="comment" rows="4" cols="50"></textarea>
+					<textarea
+						name="comment"
+						id="comment"
+						rows="4"
+						cols="50"
+						value={comment}
+						onChange={(e) => setComment(e.target.value)}
+					></textarea>
 				</div>
 			</div>
 
