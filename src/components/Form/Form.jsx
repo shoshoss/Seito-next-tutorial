@@ -6,16 +6,18 @@ export default function Form() {
 	const [task, setTask] = useState("");
 	const [comment, setComment] = useState("");
 
-	useEffect(() => {
-		console.log("task:", task);
-	}, [task]);
-
-	useEffect(() => {
-		console.log("comment:", comment);
-	}, [comment]);
+	const submitReport = (e) => {
+		e.preventDefault();
+		const report = {
+			name,
+			task,
+			comment,
+		};
+		console.log(report);
+	};
 
 	return (
-		<form className={styles.form}>
+		<form className={styles.form} onSubmit={submitReport}>
 			<div className={styles.formList}>
 				<label className={styles.formTitle} htmlFor="name">
 					Name:{" "}
