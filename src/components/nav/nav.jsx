@@ -1,11 +1,16 @@
 import Link from "next/link";
 import React from "react";
+import styles from "./Nav.module.css";
 
-export default function nav() {
+export default function Nav() {
 	return (
-		<div>
-			<Link href="/">Home</Link>
-			<Link href="/history">History</Link>
+		<div className={styles.Nav}>
+			<Link className={styles.NavLink} href="/">
+				Home
+			</Link>
+			<Link className={styles.NavLink} href="/history">
+				History
+			</Link>
 		</div>
 	);
 }
