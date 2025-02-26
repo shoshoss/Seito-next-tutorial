@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Form.module.css";
 
 export default function Form() {
+	const [name, setName] = useState("");
+
+	useEffect(() => {
+		console.log("name:", name);
+	}, [name]);
+
 	return (
 		<form className={styles.form}>
 			<div className={styles.formList}>
@@ -9,7 +15,12 @@ export default function Form() {
 					Name:{" "}
 				</label>
 				<div className={styles.formField}>
-					<input type="text" id="name" />
+					<input
+						type="text"
+						id="name"
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+					/>
 				</div>
 			</div>
 
