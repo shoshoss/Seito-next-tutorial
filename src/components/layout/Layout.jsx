@@ -1,5 +1,6 @@
 import Head from "next/head";
 import React from "react";
+import Nav from "@/components/nav/nav";
 
 export default function Layout({ children }) {
 	return (
@@ -10,6 +11,7 @@ export default function Layout({ children }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<Nav />
 			<main>{children}</main>
 		</>
 	);
